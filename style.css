@@ -1,0 +1,211 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0077b6;
+    color: white;
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+#add-appointment-btn {
+    background-color: #ff704d;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#add-appointment-btn:hover {
+    background-color: #ff4d2a;
+}
+
+#search-bar {
+    padding: 0.75em;
+    width: 250px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#search-bar:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Main */
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.dashboard-section {
+    background-color: white;
+    padding: 2em;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dashboard-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    margin-bottom: 1.5em;
+    font-size: 1.5rem;
+    color: #0077b6;
+}
+
+#appointment-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+}
+
+input, textarea, select, button {
+    padding: 1em;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #005f8a;
+    transform: translateY(-3px);
+}
+
+#appointment-list {
+    display: grid;
+    gap: 1.5em;
+    opacity: 0;
+    animation: fadeInUp 0.7s forwards;
+}
+
+.appointment-card {
+    padding: 1.5em;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.appointment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.appointment-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+}
+
+.appointment-card p {
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+.priority-urgent {
+    border-left: 5px solid red;
+}
+
+.priority-normal {
+    border-left: 5px solid green;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0px rgba(0, 119, 182, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 119, 182, 0.4);
+    }
+}
+/* Additional Animation for Form */
+#appointment-form {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+button[type="submit"] {
+    animation: pulse 1.5s infinite alternate ease-in-out;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 1em;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    #add-appointment-btn, #search-bar {
+        font-size: 0.9rem;
+    }
+    .dashboard-section {
+        padding: 1em;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+}
